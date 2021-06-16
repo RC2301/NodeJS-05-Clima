@@ -1,4 +1,5 @@
 const clima = require('./controlador/clima');
+const colors = require('colors');
 
 const argv = require('yargs').options({
     ciudad: {
@@ -9,10 +10,22 @@ const argv = require('yargs').options({
 }).argv;
 
 let ciudad = argv.ciudad;
-//
+
 clima.getClima(ciudad)
     .then(respuesta => {
-        console.log(`La temperatura en ${ciudad} es de ${respuesta} °C`);
+        if (respuesta == undefined) {
+            console.log("No existe ningun tipo de informacion".white.bgRed);
+        } else {
+            console.log(`La temperatura en ${ciudad} es de ${respuesta} °C`);
+        }
+
     }).catch(err => {
         console.log(err);
     })
+
+/*
+1.- Modificar el codigo para obtener errores coherentes
+2.- Mostrar el resto de parametros del clima
+   2.1 Utilizar colores
+3.- Subir a Github   
+*/

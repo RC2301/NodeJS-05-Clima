@@ -1,4 +1,5 @@
 const axios = require('axios');
+const colors = require('colors');
 
 const apikey = 'd4507d2b31aaabb2421d43fce6ad8e50'
 
@@ -10,7 +11,7 @@ const getClima = async(ciudad) => {
         return respuesta.data.main.temp;
     } catch (error) {
         // handle error
-        console.log("---------------ERROR---------------\n", error.data);
+        console.log("---------------ERROR---------------\n".white.bgRed, `\n${error.data}\n`.black.bgYellow);
     };
 
     // let ciudad = argv.ciudad;
