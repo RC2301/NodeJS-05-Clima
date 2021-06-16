@@ -16,7 +16,7 @@ clima.getClima(ciudad)
         if (respuesta == undefined) {
             console.log("No existe ningun tipo de informacion".white.bgRed);
         } else {
-            console.log(`La temperatura en ${ciudad} es de ${respuesta} °C`);
+            console.log(`La temperatura en ${ciudad} es de ${idc} °C`);
         }
 
     }).catch(err => {
